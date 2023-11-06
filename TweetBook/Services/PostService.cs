@@ -45,4 +45,19 @@ public class PostService: IPostService
 
         return true;
     }
+
+    public bool DeletePost(Guid postId)
+    {
+        var exists = GetPostById(postId) != null;
+
+        if (!exists)
+        {
+            return false;
+        }
+
+        var postIndex = _posts.FindIndex(p => p.Id == postId);
+        _posts.Remove(_posts[postIndex]);
+
+        return true;
+    }
 }

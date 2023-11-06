@@ -12,5 +12,6 @@ public static class ApiRoutes
         public const string Get = Base + "/posts/{postId}";
         public const string Create = $"{Base}/create";
         public const string Update = Base + "/posts/{postId}";
+        public const string Delete = Base + "/posts/{postId}";
     }
 }
